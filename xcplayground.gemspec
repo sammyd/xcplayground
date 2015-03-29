@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.files         = %w{ README.md LICENSE } + Dir["lib/**/*.rb"]
   s.homepage      = 'https://github.com/sammyd/xcplayground'
   s.license       = 'MIT'
-  s.executables   = %{ xcplayground }
-  s.require_paths = %{ lib }
+  s.executables   = %{xcplayground}
+  s.require_paths = %{lib}
 end
 
