@@ -1,6 +1,5 @@
 #
 module Xcplayground
-
   # Represents the CLI associated with xcplayground
   #
   class Command
