@@ -8,4 +8,6 @@ group :development do
   gem 'rake'
 
   gem 'rubocop'
+
+  gem 'pry'
 end
