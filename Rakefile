@@ -27,7 +27,7 @@ begin
 
   require 'rubocop/rake_task'
   RuboCop::RakeTask.new(:rubocop) do |task|
-    task.patterns = ['lib', 'spec']
+    task.patterns = ['lib', 'spec', 'bin']
   end
 
 rescue LoadError, NameError => e
