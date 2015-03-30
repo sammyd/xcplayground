@@ -8,7 +8,7 @@ module Xcplayground
     attr_reader :path, :timeline_file, :playground_file, :swift_file
 
     def initialize(path, platform = :ios)
-      @path = path
+      @path = File.expand_path(path)
       @swift_file      = SwiftFile.new('contents.swift')
       @timeline_file   = XctimelineFile.new
       @playground_file = XcplaygroundFile.new(platform)

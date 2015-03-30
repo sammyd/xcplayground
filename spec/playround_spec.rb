@@ -6,9 +6,15 @@ module XctimelineFileSpecs
   describe Xcplayground::Playground do
     describe 'Initialisation' do
       it 'sets the path on init' do
-        path = 'samplepath'
+        path = '/samplepath'
         playground = Xcplayground::Playground.new(path)
         playground.path.should == path
+      end
+
+      it 'expands the path before storing' do
+        path = '~/samplepath'
+        playground = Xcplayground::Playground.new(path)
+        playground.path.should == "#{ENV['HOME']}/samplepath"
       end
 
       it 'creates a contents.swift' do
