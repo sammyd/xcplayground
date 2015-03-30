@@ -5,15 +5,19 @@ module Xcplayground
 
     attr_accessor :version
     attr_accessor :platform
+    attr_accessor :filename
 
-    def initialize(platform, version = '5.0')
+    def initialize(platform, fname = 'contents.xcplayground', version = '5.0')
       @platform = platform
+      @filename = fname
       @version  = version
     end
 
-    def save(filepath, timeline_file = 'timeline.xctimeline')
-      puts filepath
-      puts timeline_file
+    def save(path, timeline_file = 'timeline.xctimeline')
+      file = File.join(path, filename)
+      File.open(file, 'w') do |f|
+        f.puts to_s(timeline_file)
+      end
     end
 
     def to_s(timeline_file)

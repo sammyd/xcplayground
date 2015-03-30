@@ -3,14 +3,19 @@ module Xcplayground
   class XctimelineFile
     require 'builder'
 
+    attr_reader :filename
     attr_reader :version
 
-    def initialize(version = '3.0')
-      @version = version
+    def initialize(filename = 'timeline.xctimeline', version = '3.0')
+      @filename = filename
+      @version  = version
     end
 
     def save(path)
-      puts path
+      file = File.join(path, filename)
+      File.open(file, 'w') do |f|
+        f.puts to_s
+      end
     end
 
     def to_s
