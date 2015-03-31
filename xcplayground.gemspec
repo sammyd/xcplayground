@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.executables   = %{xcplayground}
   s.require_paths = %{lib}
 
-  s.add_runtime_dependency 'builder', '~> 3.2.2'
+  s.add_runtime_dependency 'builder', '~> 3.2', '>= 3.2.2'
 
   s.required_ruby_version = '>= 2.0.0'
 end
